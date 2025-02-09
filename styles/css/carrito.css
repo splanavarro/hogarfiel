@@ -1,0 +1,327 @@
+/* Estilo del contenedor general (main + aside) */
+.contenedor-externo {
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 14px 18px 18px;
+}
+
+/* Estilo de los pasos */
+#pasos {
+    margin: 1em 0.5em;
+    width: 100%;
+    display: flex;
+    gap: 3em;
+    justify-content: center;
+}
+
+.activo, .bloqueado, .pasado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    color: #fff;
+    user-select: none;
+}
+
+.paso:hover {
+    cursor: pointer;
+}
+
+.activo {
+    background-color: #0aa50a;
+}
+
+.activo:hover {
+    background-color: #127012;
+}
+
+.pasado {
+    background-color: #0084ff;   
+}
+
+.pasado:hover {
+    background-color: #1066b6;
+}
+
+.bloqueado {
+    background-color: #888;
+}
+
+.bloqueado:hover {
+    cursor: not-allowed;
+}
+
+/* Estilo del carrito */
+
+#carrito, #datos-cliente, #sistemas-pago, #confirmacion-compra {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.producto, .producto-agotado {
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    margin: 1em;
+    align-items: center;
+}
+
+.producto-agotado {
+    opacity: 0.5;
+}
+
+.producto:not(:last-child) {
+    border-bottom: 1px solid grey;
+}
+
+.check, .imagen {
+    margin-right: 3em;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+}
+
+.check label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 1em;
+}
+
+.check input[type="checkbox"] { 
+    appearance: none;
+    width: 1em;
+    height: 1em;
+    border: 2px solid var(--color-texto);
+    border-radius: 100%;
+}
+
+.check input[type="checkbox"]:hover {
+    border: 2px solid var(--color-texto);
+    background-color: var(--color-texto);
+    cursor: pointer;
+}
+
+.check input[type="checkbox"]:checked {
+    background-color: var(--color-texto);
+}
+
+.check input[type="checkbox"]:checked:hover {
+    background-color: var(--color-fondo);
+    cursor: pointer;
+}
+
+.imagen img {
+    max-width: 150px;
+    height: 100%;
+}
+
+.info {
+    width: 100%;
+}
+
+.precio-cantidad {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: last baseline;
+}
+
+.nombre {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.unitario {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.total-producto {
+    font-weight: lighter;
+    font-size: 0.8em;
+}
+
+#restar, #sumar {
+    width: 1.75em;
+    height: 1.75em;
+    border: 1px solid var(--color-fondo);
+    color: var(--color-fondo);
+    background-color: var(--color-texto);
+}
+
+#restar:hover, #sumar:hover {
+    cursor: pointer;
+    border: 1px solid var(--color-texto);
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+}
+
+.precio a {
+    color: red;
+}
+
+.precio a:hover {
+    color: #9b1111;
+    cursor: pointer;
+}
+
+#botones {
+    display: flex;
+    justify-content: end;
+    gap: 1.5em;
+    margin: 0.5em;
+}
+
+#botones button {
+    border: 1px solid var(--color-fondo);
+    color: var(--color-fondo);
+    background-color: var(--color-texto);
+    padding: 0.4em;
+}
+
+#botones button:hover {
+    cursor: pointer;
+    border: 1px solid var(--color-texto);
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+}
+
+#botones button:disabled {
+    opacity: 0.5;
+}
+
+#botones button:disabled:hover {
+    cursor: not-allowed;
+    border: 1px solid var(--color-fondo);
+    color: var(--color-fondo);
+    background-color: var(--color-texto);
+}
+
+/* Estilo de los datos del cliente */
+fieldset {
+    color: var(--color-texto);
+    border: 1px solid var(--color-texto);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+fieldset input {
+    margin: 0.5em;
+}
+
+legend {
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+select {
+    width: fit-content;
+}
+
+#datos-cliente {
+    display: none;
+}
+
+#error-envio {
+    display: none;
+    font-size: 0.8em;
+    color: var(--color-enfasis);
+}
+
+fieldset input:invalid, fieldset select:invalid {
+    border: 2px solid red;
+    color: red;
+}
+
+/* Estilo de los sistemas de pago */
+#sistemas-pago {
+    display: none;
+}
+
+#div-tarjeta, #div-paypal, #div-transferencia {
+    display: none;
+}
+
+#sistemas-pago input, #sistemas-pago select {
+    display: block;
+}
+
+/* Estilo de la confirmación de compra */
+#confirmacion-compra {
+    display: none;
+}
+
+#confirmacion-compra button {
+    border: 1px solid var(--color-fondo);
+    color: var(--color-fondo);
+    background-color: var(--color-texto);
+    padding: 0.4em;
+}
+
+#confirmacion-compra button:hover {
+    cursor: pointer;
+    border: 1px solid var(--color-texto);
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+}
+
+#confirmacion-compra table, #confirmacion-compra td, #confirmacion-compra th {
+    border: 1px solid var(--color-texto);
+    border-collapse: collapse;
+    padding: 0.5em;
+    margin: 0 auto;
+}
+
+#confirmacion-compra ul {
+    list-style: none;
+    padding: none;
+}
+
+/* Estilo del aside */
+
+aside {
+    position: sticky;
+    top: 10px;
+    align-self: flex-start;
+    padding: 1em;
+}
+
+#subtotal, #impuestos, #ecologicos-total, #reciclado-total, #envio-total {
+    font-size: 0.9em;
+    margin: 0;
+}
+
+#ecologicos-total, #reciclado-total, #envio-total {
+    display: none;
+}
+
+#total {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Más de 912 px */
+@media (min-width: 912px){
+    .contenedor-externo {
+        display: grid;
+        grid-template-areas: "main main main aside";
+    }
+
+    main {
+        grid-area: main;
+        margin-right: 1em;
+        border: 1px solid grey;
+    }
+
+    aside {
+        grid-area: aside;
+        border: 1px solid grey;
+    }
+}

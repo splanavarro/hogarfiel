@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de ejemplo de un producto que muestra una cama Harriet 160 con cajones">
+    <title>Cesta de la compra</title>
+    <!-- Añadimos media="print" y el onload para evitar el bloqueo de renderizado -->
+    <link rel="stylesheet" href="../styles/css/shared.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="../styles/css/carrito.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+
+    </header>
+    <div class="contenedor-externo">
+        <main>
+            <div id="pasos">
+                <div class="paso activo"><span>1</span></div>
+                <div class="paso bloqueado"><span>2</span></div>
+                <div class="paso bloqueado"><span>3</span></div>
+                <div class="paso bloqueado"><span>4</span></div>
+            </div>
+            <div id="carrito">
+                <div class="producto">
+                    <div class="check">
+                        <label for="checkbox-1">
+                            <input type="checkbox" class="check-producto" id="checkbox-1" checked>
+                        </label>
+                    </div>
+                    <div class="imagen">
+                        <img src="../img/sillon.jpg" alt="Imagen del producto 1 de la cesta">
+                    </div>
+                    <div class="info">
+                        <span class="nombre">Producto 1</span>
+                        <div class="precio-cantidad">
+                            <div class="precio">
+                                <div class="unitario">€99.99</div>
+                                <div class="total-producto">€99.99 c / u</div>
+                                <a href="#"><i class="fas fa-trash"></i></a>
+                            </div>
+                            <div class="cantidad">
+                                <button id="restar">-</button>
+                                <span class="cantidad-inner">1</span>
+                                <button id="sumar">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="producto">
+                    <div class="check">
+                        <label for="checkbox-2">
+                            <input type="checkbox" class="check-producto" id="checkbox-2" checked>
+                        </label>
+                    </div>
+                    <div class="imagen">
+                        <img src="../img/silla.jpg" alt="Imagen del producto 1 de la cesta">
+                    </div>
+                    <div class="info">
+                        <span class="nombre">Producto 2</span>
+                        <div class="precio-cantidad">
+                            <div class="precio">
+                                <div class="unitario">€44.99</div>
+                                <div class="total-producto">€44.99 c / u</div>
+                                <a href="#"><i class="fas fa-trash"></i></a>
+                            </div>
+                            <div class="cantidad">
+                                <button id="restar">-</button>
+                                <span class="cantidad-inner">1</span>
+                                <button id="sumar">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="producto">
+                    <div class="check">
+                        <label for="checkbox-3">
+                            <input type="checkbox" class="check-producto" id="checkbox-3" checked>
+                        </label>
+                    </div>
+                    <div class="imagen">
+                        <img src="../img/table.jpg" alt="Imagen del producto 1 de la cesta">
+                    </div>
+                    <div class="info">
+                        <span class="nombre">Producto 3</span>
+                        <div class="precio-cantidad">
+                            <div class="precio">
+                                <div class="unitario">€19.99</div>
+                                <div class="total-producto">€19.99 c / u</div>
+                                <a href="#"><i class="fas fa-trash"></i></a>
+                            </div>
+                            <div class="cantidad">
+                                <button id="restar">-</button>
+                                <span class="cantidad-inner">1</span>
+                                <button id="sumar">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="producto">
+                    <div class="check">
+                        <label for="checkbox-4">
+                            <input type="checkbox" class="check-producto" id="checkbox-4" checked>
+                        </label>
+                    </div>
+                    <div class="imagen">
+                        <img src="../img/barbecue.jpg" alt="Imagen del producto 1 de la cesta">
+                    </div>
+                    <div class="info">
+                        <span class="nombre">Producto 4</span>
+                        <div class="precio-cantidad">
+                            <div class="precio">
+                                <div class="unitario">€249.99</div>
+                                <div class="total-producto">€249.99 c / u</div>
+                                <a href="#"><i class="fas fa-trash"></i></a>
+                            </div>
+                            <div class="cantidad">
+                                <button id="restar">-</button>
+                                <span class="cantidad-inner">1</span>
+                                <button id="sumar">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="producto-agotado">
+                    <div class="check">
+                        <label for="checkbox-5">
+                            <input type="checkbox" class="check-producto" id="checkbox-5">
+                        </label>
+                    </div>
+                    <div class="imagen">
+                        <img src="../img/bed.jpg" alt="Imagen del producto 1 de la cesta">
+                    </div>
+                    <div class="info">
+                        <span class="fuera-stock">¡Producto fuera de stock!</span><br>
+                        <span class="nombre">Producto 5</span>
+                        <div class="precio-cantidad">
+                            <div class="precio">
+                                <div class="unitario">€299.99</div>
+                                <div class="total-producto">€299.99 c / u</div>
+                                <a href="#"><i class="fas fa-trash"></i></a>
+                            </div>
+                            <div class="cantidad">
+                                <button id="restar">-</button>
+                                <span class="cantidad-inner">1</span>
+                                <button id="sumar">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="datos-cliente">
+                <form id="checkout-form">
+                    <fieldset id="datos_personales">
+                        <legend>Datos Personales</legend>
+                        <label>Nombre: <input type="text" name="nombre" required></label>
+                        <label>Apellido: <input type="text" name="apellido" required></label>
+                        <label>DNI/NIF: <input type="text" name="dni" required></label>
+                    </fieldset>
+                
+                    <fieldset id="datos_envio">
+                        <legend>Datos de Envío</legend>
+                        <label>Dirección: <input type="text" name="direccion_envio" required></label>
+                        <label>Código Postal: <input type="tel" name="cp_envio" required></label>
+                        <label>País: </label>
+                            <select name="pais_envio" id="pais_envio" required>
+                                <option>España</option>
+                                <option>Portugal</option>
+                                <option>Francia</option>
+                                <option>Alemania</option>
+                                <option>Italia</option>
+                                <option>Países Bajos</option>
+                                <option>Bélgica</option>
+                                <option>Otro</option>
+                            </select>
+                        
+                        <p id="error-envio">¡Lo sentimos! Su pedido no puede ser enviado a su localización.</p>
+                        <label>Ciudad: <input type="text" name="ciudad_envio" required></label>
+                    </fieldset>
+                
+                    <fieldset id="datos_facturacion">
+                        <legend>Datos de Facturación</legend>
+                        <label><input type="checkbox" id="facturacion_envio" checked=false> Usar los mismos datos de envío</label>
+                        <label>Dirección: <input type="text" name="direccion_facturacion" required></label>
+                        <label>Código Postal: <input type="tel" name="cp_facturacion" required></label>
+                        <label>País: </label>
+                            <select name="pais_facturacion" required>
+                                <option>España</option>
+                                <option>Portugal</option>
+                                <option>Francia</option>
+                                <option>Alemania</option>
+                                <option>Italia</option>
+                                <option>Países Bajos</option>
+                                <option>Bélgica</option>
+                                <option>Otro</option>
+                            </select>
+                        
+                        <label>Ciudad: <input type="text" name="ciudad_facturacion" required></label>
+                    </fieldset>
+                
+                    <fieldset id="datos_contacto">
+                        <legend>Datos de Contacto</legend>
+                        <label>Teléfono: <input type="tel" name="telefono"></label>
+                        <label>Email: <input type="email" name="email"></label>
+                    </fieldset>
+                
+                    <fieldset id="metodo_envio">
+                        <legend>Método de Envío</legend>
+                        <label>Escoja su método de envío: </label>
+                            <select name="zona_envio" id="zona_envio" required>
+                                <option disabled selected>-- Escoja su método de envío --</option>
+                                <option value="metodo1">Envío exprés (€9.99)</option>
+                                <option value="metodo2">Envío estándar (€4.99)</option>
+                            </select>
+                        
+                    </fieldset>
+
+                    <fieldset id="sostenibilidad">
+                        <legend>Sostenibilidad de Muebles</legend>
+                        <label for="ecologicos">
+                            <input type="checkbox" name="ecologicos" id="ecologicos">
+                            Muebles ecológicos (+10% subtotal)
+                        </label>
+                        <label for="reciclado">
+                            <input type="checkbox" name="reciclado" id="reciclado">
+                            Muebles reciclados (-10% subtotal)
+                        </label>
+                    </fieldset>                
+                </form>
+                
+            </div>
+            <div id="sistemas-pago">
+                <form id="sistemas-pago-form">
+                    <fieldset id="metodos-pago">
+                        <legend>Métodos de pago</legend>
+                        <select name="select-metodos-pago" id="select-metodos-pago">
+                            <option selected disabled>-- Seleccione su método de pago --</option>
+                            <option value="tarjeta">Tarjeta</option>
+                            <option value="paypal">PayPal</option>
+                            <option value="transferencia">Transferencia bancaria</option>
+                        </select>
+                    </fieldset>
+                    <fieldset id="datos-pago">
+                        <legend>Datos de pago</legend>
+                        <div id="div-tarjeta">
+                            <label for="numero-tarjeta">Número de la tarjeta
+                                <input type="tel" id="numero-tarjeta" minlength="16" maxlength="16">  
+                            </label>
+                            <label for="titular">Nombre y apellidos
+                                <input type="text" id="titular">
+                            </label>
+                            <label for="fecha-caducidad">Fecha de caducidad
+                                <input type="month" name="fecha-caducidad" id="fecha-caducidad" placeholder="Ej. enero de 2099">
+                            </label>
+                            <label for="cvc">CVC
+                                <input type="tel" id="cvc" maxlength="3">
+                            </label>
+                        </div>
+                        <div id="div-paypal">
+                            <label for="correo-paypal">Correo de Paypal: 
+                                <input type="email" id="correo-paypal">
+                            </label>
+                        </div>
+                        <div id="div-transferencia">
+                            <label for="factura-transferencia">Sube tu PDF de la transferencia: 
+                                <input type="file" name="factura-transferencia" id="factura-transferencia" accept=".pdf">
+                            </label>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div id="confirmacion-compra">
+                <div id="carrito-confirmacion">
+                    <table id="tabla-carrito-confirmacion">
+
+                    </table>
+                </div>
+                <div id="datos-cliente-confirmacion">
+                    <ul id="lista-datos-cliente-confirmacion">
+
+                    </ul>
+                </div>
+                <div id="pago-confirmacion">
+                    <ul id="lista-pago-confirmacion">
+
+                    </ul>
+                </div>
+                <div id="enlaces-confirmacion">
+                    <button>Carrito</button>
+                    <button>Datos de envío</button>
+                    <button>Datos de facturación</button>
+                    <button>Datos de contacto</button>
+                    <button>Método de pago</button>
+                </div>
+            </div>
+            <div id="botones">
+                <button disabled>Atrás</button>
+                <button>Continuar</button>
+            </div>
+        </main>
+        <aside>
+            <p id="subtotal">Subtotal: </p>
+            <p id="ecologicos-total">Muebles ecológicos: </p>
+            <p id="reciclado-total">Muebles reciclados: </p>
+            <p id="envio-total">Envío: </p>
+            <p id="impuestos">IGIC (7%): </p>
+            <p id="total">Total:</p>
+        </aside>
+    </div>
+    <script src="../script/carrito.js" defer></script>
+</body>
+</html>

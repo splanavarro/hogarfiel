@@ -1,0 +1,67 @@
+/* Estilo del main */
+main section {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    box-shadow: 2px 2px var(--color-sombra);
+    background-color: var(--color-principal);
+    border: 2px solid var(--color-texto);
+    text-align: center;
+    margin-bottom: 1.5em;
+    transition: 0.3s;
+}
+
+    main section a {
+        text-decoration: none;
+        color: var(--color-enfasis);
+    }
+
+    section img {
+        border: 2px solid var(--color-sombra);
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5em;
+        color: var(--color-texto);
+        background-color: var(--color-fondo);
+        margin: auto;
+    }
+    
+        section > a {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            text-align: center;
+            text-decoration: none;
+            color: var(--color-texto);;
+            height: 100%;
+        }
+    
+            section > a > img {
+                height: 25em;
+                object-fit: cover;
+            }
+    
+        main>section:hover {
+            cursor: pointer;
+            border: 2px solid var(--color-enfasis);
+            box-shadow: 5px 5px var(--color-sombra);
+            transform: scale(1.02);
+            filter: saturate(250%);
+        }
+
+/* Más de 912 px */
+@media (min-width: 912px){
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Más de 1480 px */
+@media (min-width: 1480px) {
+    main {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

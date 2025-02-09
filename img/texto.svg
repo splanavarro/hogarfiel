@@ -1,0 +1,8 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 350" width="350" height="350">
+	<title>texto-svg</title>
+	<style>
+		.s0 { fill: #000000 } 
+	</style>
+	<path id="A" class="s0" aria-label="A"  d="m162.7 67.2l-58.8 152.6h117.7zm-59.3 268.7h-90.2v-22.7h28.1l114.3-298h36.1l114.5 298h31.6v22.7h-116.7v-22.7h35.7l-26.9-70.5h-134.9l-26.8 70.5h35.2z"/>
+	<path id="Shape 1" class="s0" d="m318.7 192.7l22.5-15-34.9 45.1-35.1-44.9 22.5 14.9-0.3-147.2-22.5 15 34.9-45 35.1 44.9-22.5-15z"/>
+</svg>

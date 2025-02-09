@@ -1,0 +1,444 @@
+/* Modo claro (por defecto) */
+    :root {
+        --color-fondo: #ebe0ce;
+        --color-texto: #221d1d;
+        --color-principal: #eaa08d;
+        --color-enfasis: #000092;
+        --color-sombra: #796464;
+    }
+
+    body {
+        background-color: var(--color-fondo);
+        color: var(--color-texto);
+    }
+
+    /* Las herramientas (ayuda, login, carrito, modo y contraste) cambian a negro o blanco en función del estado */
+    .herramientas img {
+        filter: invert(0);
+    }
+
+/* Modo claro (alto contraste) */
+    .contrast-mode {
+        --color-fondo: #ffffff;
+        --color-texto: #000000;
+        --color-principal: #ffffff;
+        --color-enfasis: #424242;
+        --color-sombra: #000000;
+    }
+
+    .contrast-mode body {
+        background-color: var(--color-fondo);
+        color: var(--color-texto);
+    }
+
+    /* Cambio el color del texto de los botones, pues el énfasis más oscuro hace ilegible la fuente */
+    .contrast-mode button {
+        color: var(--color-fondo);
+    }
+
+    /* Invertimos el logo para que sea visible sobre un fondo claro */
+    .contrast-mode .logo>img {
+        filter:invert(1);
+    }
+
+/* Modo oscuro */
+    .dark-mode {
+        --color-fondo: #221d1d;
+        --color-texto: #ebe0ce;
+        --color-principal: #4b2e27;
+        --color-enfasis: #ffd600;
+        --color-sombra: #e0e0e0;
+    }
+
+    .dark-mode body {
+        background-color: var(--color-fondo);
+        color: var(--color-texto);
+    }
+
+    .dark-mode .herramientas img {
+        filter: invert(1);
+    }
+
+/* Modo oscuro (alto contraste) */
+    .dark-mode.contrast-mode {
+        --color-fondo: #000000;
+        --color-texto: #ffffff;
+        --color-principal: #000000;
+        --color-enfasis: #ffd700;
+        --color-sombra: #ffffff;
+    }
+
+    .dark-mode.contrast-mode body {
+        background-color: var(--color-fondo);
+        color: var(--color-texto);
+    }
+
+    /* Reinvertimos el color del logo; de eliminar esto, se quedaría negro en fondo negro */
+    .dark-mode.contrast-mode .logo>img {
+        filter:invert(0);
+    }
+
+
+
+/* Preferencia del sistema (modo oscuro) */
+@media (prefers-color-scheme: dark) {
+    /* Modo oscuro (por defecto) */
+        :root {
+            --color-fondo: #221d1d;
+            --color-texto: #ebe0ce;
+            --color-principal: #4b2e27;
+            --color-enfasis: #ffd600;
+            --color-sombra: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+        }
+
+        .herramientas img {
+            filter: invert(1);
+        }
+
+    /* Redefinimos el modo oscuro de alto contraste */
+        .contrast-mode {
+            --color-fondo: #000000;
+            --color-texto: #ffffff;
+            --color-principal: #000000;
+            --color-enfasis: #ffd700;
+            --color-sombra: #ffffff;
+        }
+
+        .contrast-mode body {
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+        }
+
+        .contrast-mode .logo>img {
+            filter:invert(0);
+        }
+
+    /* Definimos el modo claro como "dark-mode" para hacer el toggle más sencillo en el script */
+        .dark-mode {
+            --color-fondo: #ebe0ce;
+            --color-texto: #221d1d;
+            --color-principal: #eaa08d;
+            --color-enfasis: #000092;
+            --color-sombra: #796464;
+        }
+        
+        .dark-mode body {
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+        }
+        
+        .dark-mode .herramientas img {
+            filter: invert(0);
+        }
+
+    /* Y redefinimos el modo claro de alto contraste */
+        .dark-mode.contrast-mode {
+            --color-fondo: #ffffff;
+            --color-texto: #000000;
+            --color-principal: #ffffff;
+            --color-enfasis: #424242;
+            --color-sombra: #000000;
+        }
+
+        /* Cambio el color del texto de los botones, pues el énfasis más oscuro hace ilegible la fuente */
+        .dark-mode.contrast-mode button {
+            color: var(--color-fondo);
+        }
+        
+        .dark-mode.contrast-mode body {
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+        }
+        
+        /* Invertimos el logo para que sea visible sobre un fondo claro */
+        .dark-mode.contrast-mode .logo>img {
+            filter:invert(1);
+        }
+}
+
+:root {
+    --texto-medida: 1em;
+    --texto-small: 0.8em;
+}
+
+/* Importamos las fuentes desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/* Importamos las fuentes con @font-face */
+/* Nunito */
+@font-face {
+    font-family: "Nunito";
+    src: url("../../fonts/Nunito-VariableFont_wght.ttf") format("truetype"),
+         url("../../fonts/Nunito-Italic-VariableFont_wght.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    
+    /* Añadimos font-display: swap para que el navegador cargue una fuente predeterminada mientras carga la personalizada, evitando que el texto quede invisible */
+    font-display: swap;
+}
+
+/* Versión cursiva */
+@font-face {
+    font-family: "Nunito";
+    src: url("../../fonts/Nunito-Italic-VariableFont_wght.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+
+    font-display: swap;
+}
+
+/* Ubuntu */
+@font-face {
+    font-family: "Ubuntu";
+    src: url("../../fonts/Ubuntu-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+
+    font-display: swap;
+}
+
+/* Aplicamos las fuentes */
+body {
+    font-family: "Nunito", "Ubuntu", "Georgia", sans-serif;
+    font-size: var(--texto-medida);
+}
+
+/* Estilo del header */
+.logo {
+    background-color: var(--color-principal);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+    .logo > img {
+        max-width: 100%;
+    }
+
+.herramientas-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.herramientas {
+    background-color: var(--color-fondo);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.herramientas ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 1em;
+    gap: 2.5em;
+}
+
+.herramientas a {
+    text-decoration: none;
+}
+
+    .herramientas a:hover img {
+        filter: invert(43%) sepia(55%) saturate(579%) hue-rotate(-10deg) brightness(92%) contrast(92%);
+    }
+
+.herramientas img {
+    width: 1.5em;
+    height: auto;
+    transition: 0.25s;
+}
+
+.cambio-texto {
+    flex-direction: row;
+    gap: 20%;
+}
+
+/* Estilo del navbar */
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    background: linear-gradient(to bottom, var(--color-fondo), var(--color-principal));
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.navbar a {
+    display: block;
+    padding: 0.25em;
+    text-decoration: none;
+    transition: 0.33s;
+}
+
+    .navbar a {
+        color: var(--color-texto);
+    }
+
+    .navbar a:hover:not(.categoria) {
+        background-color: var(--color-texto);
+        color: var(--color-fondo);
+    }
+
+.navbar li>a {
+    cursor: default;
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+[role="button"] {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Estilo del container */
+    .layout {
+        display: grid;
+    }
+
+/* Estilo del aside */
+
+aside {
+    padding-right: 1.5em;
+    height: fit-content;
+}
+
+    aside>ul {
+        list-style: none;
+        padding-left: 0.25em;
+    }
+
+    aside > ul li {
+        margin-bottom: 0.75em;
+        color: var(--color-texto);
+    }
+
+    aside>ul a {
+        text-decoration: none;
+        color: var(--color-texto);
+    }
+
+    aside > ul a:hover {
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+/* Estilo del footer */
+
+footer {
+    margin-top: 2em;
+    background-color: var(--color-fondo);
+    color: var(--color-claro-ac);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
+    padding: 1em;
+    font-size: 0.8em;
+}
+
+    footer section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer strong {
+        font-variant: small-caps;
+    }
+
+    footer ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    footer li {
+        margin-bottom: 0.5em;
+    }
+
+    footer a {
+        color: var(--color-texto);
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+/* Entre 576 y 911 px */
+@media (min-width: 576px) {
+    .layout {
+        display: grid;
+        grid-template-areas:
+            "nav"
+            "aside"
+            "main";
+    }
+
+    main {
+        grid-area: main;
+    }
+
+    nav {
+        grid-area: nav;
+    }
+
+    .herramientas-group {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    aside {
+        grid-area: aside;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+/* Entre 912 y 1023 px*/
+@media (min-width: 912px){
+    .layout {
+        grid-template-areas:
+            "nav"
+            "aside"
+            "main";
+    }
+
+    footer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Más de 1023 px */
+@media (min-width: 1024px) {
+    .layout {
+        grid-template-columns: auto 1fr;
+        grid-template-areas:
+            "nav nav"
+            "aside main";
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

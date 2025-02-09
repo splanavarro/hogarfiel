@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de ejemplo de un producto que muestra una cama Harriet 160 con cajones">
+    <title>Producto</title>
+    <!-- Añadimos media="print" y el onload para evitar el bloqueo de renderizado -->
+    <link rel="stylesheet" href="styles/css/shared.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="styles/css/styles.css" media="print" onload="this.media='all'">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <!-- Añado width y height a todas las imágenes para que el navegador reserve el espacio adecuado antes de que carguen -->
+            <a href="index.html"><img src="img/logo.webp" alt="Logotipo de la empresa"></a>
+        </div>
+        <div class="herramientas-group" role="toolbar" aria-label="Herramientas principales">
+            <div class="herramientas-row-1">
+                <div class="herramientas">
+                    <ul>
+                        <li><a href="" aria-label="Ayuda"><img src="img/ayuda.svg" width="25" height="25" alt=""></a></li>
+                        <li><a href="" aria-label="Cuenta"><img src="img/cuenta.svg" width="25" height="25" alt=""></a></li>
+                        <li><a href="pages/carrito.html" aria-label="Cesta"><img src="img/carro.svg" width="25" height="25" alt=""></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="herramientas-row-2">
+                <div class="herramientas">
+                    <ul>
+                        <li><a href="#" onclick="cambiarLuz()" id="modoluz" aria-label="Cambiar modo de luz"><img src="img/modo-oscuro.svg" width="25" height="25" alt=""></a></li>
+                        <li><a href="#" onclick="cambiarContraste()" id="modocontraste" aria-label="Cambiar contraste"><img src="img/contraste.svg" width="25" height="25" alt=""></a></li>
+                        <li><a href="#" onclick="cambiarTexto()" id="cambiotexto" aria-label="Cambiar tamaño del texto"><img src="img/texto.svg" width="25" height="25" alt=""></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="herramientas-row-3">
+                <div class="herramientas">
+                    <div class="cambio-texto" style="display: none">
+                        <ul>
+                            <li><a href="#" onclick="reducirTexto()" id="reducirtexto" aria-label="Reducir tamaño del texto"><img src="img/menos.svg" width="25" height="25" alt="Reducir"></a></li>
+                            <li><a href="#" onclick="restablecerTexto()" id="restablecertexto" aria-label="Restablecer tamaño del texto"><img src="img/predeterminado.svg" width="25" height="25" alt="Restablecer"></a></li>
+                            <li><a href="#" onclick="aumentarTexto()" id="aumentartexto" aria-label="Aumentar tamaño del texto"><img src="img/mas.svg" width="25" height="25" alt="Aumentar"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="layout">
+        <nav class="navbar" role="navigation" aria-label="Navegación principal">
+            <ul>
+                <li>
+                    <a href="#" class="categoria">Salón</a>
+                    <div class="dropdown-content" role="menu" aria-label="Categorías de salón">
+                        <a href="#" role="menuitem">Apilables</a>
+                        <a href="#" role="menuitem">Librerías</a>
+                        <a href="#" role="menuitem">Mesas auxiliares</a>
+                        <a href="#" role="menuitem">Muebles de televisión</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="categoria">Dormitorio</a>
+                    <div class="dropdown-content" role="menu" aria-label="Categorías de dormitorio">
+                        <a href="#" role="menuitem">Camas</a>
+                        <a href="#" role="menuitem">Cómodas</a>
+                        <a href="#" role="menuitem">Mesas de noche</a>
+                        <a href="#" role="menuitem">Vestidores</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="categoria">Jardín</a>
+                    <div class="dropdown-content" role="menu" aria-label="Categorías de jardín">
+                        <a href="#" role="menuitem">Mesas</a>
+                        <a href="#" role="menuitem">Sillas</a>
+                        <a href="#" role="menuitem">Sombrillas</a>
+                        <a href="#" role="menuitem">Tumbonas</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <aside role="complementary" aria-label="Navegación secundaria">
+            <ul>
+                <li>&#x27A1; <a href="index.html">Inicio</a></li>
+                <li>&#x27A1; <a href="pages/catalogo.html">Catálogo</a></li>
+                <li>&#x27A1; <a href="">Novedades</a></li>
+                <li>&#x27A1; <a href="">En oferta</a></li>
+                <li>&#x27A1; <a href="">Promociones</a></li>
+                <li>&#x27A1; <a href="">Dónde encontrarnos</a></li>
+            </ul>
+        </aside>
+        <main>
+            <section id="inicio" aria-labelledby="titulo-inicio">
+                <h2 id="titulo-inicio">Página de inicio</h2>
+                <a href="pages/catalogo.html"><button>¡Accede al catálogo!</button></a>
+                <p>¡Recuerda que puedes utilizar la barra de navegación lateral en todo momento!</p>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <section aria-labelledby="contenido-reglamentado">
+            <h3 id="contenido-reglamentado">Contenido Reglamentado</h3>
+            <ul>
+                <li><a href="#">Condiciones de contratación</a></li>
+                <li><a href="#">Condiciones de uso web</a></li>
+                <li><a href="#">Aviso legal</a></li>
+                <li><a href="#">Política de privacidad</a></li>
+                <li><a href="#">Configurar cookies</a></li>
+            </ul>
+        </section>
+        <section aria-labelledby="ayuda">
+            <h3 id="ayuda">Ayuda</h3>
+            <ul>
+                <li><a href="#">Cómo comprar</a></li>
+                <li><a href="#">Envíos</a></li>
+                <li><a href="#">Devoluciones</a></li>
+                <li><a href="#">Bases promocionales</a></li>
+            </ul>
+        </section>
+        <section aria-labelledby="corporativo">
+            <h3 id="corporativo">Contenido Corporativo</h3>
+            <ul>
+                <li><a href="/pages/equipo.html">Quiénes somos</a></li>
+                <li><a href="/pages/equipo.html">Misión, visión y valores</a></li>
+                <li><a href="#">Responsabilidad social corporativa</a></li>
+                <li><a href="#">Tiendas</a></li>
+            </ul>
+        </section>
+    </footer>
+    <script src="script/script.js"></script>
+</body>
+</html>
